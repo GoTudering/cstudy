@@ -4,6 +4,6 @@ int main(void)
 {
 	int n,i;
 	scanf("%d",&n);
-	for(i=1;i<=n;i++)
+	for(i=n;i>=1;i--)
 		printf("%d\n",i);
 }
