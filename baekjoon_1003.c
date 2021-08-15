@@ -1,5 +1,5 @@
 #include <stdio.h>
-int arr[40];
+int arr[41];
 int fibonacci(int n) {
     if (n == 0) {
         return 0;
