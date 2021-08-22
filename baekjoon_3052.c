@@ -22,7 +22,5 @@ int main(void)
 		if(num==0)
 			count+=1;
 	}
-	for(int i=0;i<10;i++)
-		printf("%d ",arr[i]);
 	printf("%d",count);
 }
