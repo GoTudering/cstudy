@@ -11,6 +11,8 @@ int d(int n)
 	return para;
 }
 
+
+/*
 int main(void)
 {
 	for(int i=1;i<=10000;i++)
@@ -25,6 +27,22 @@ int main(void)
 			}
 		}
 		if(check==0)
+			printf("%d\n",i);
+	}
+}
+*/
+
+//속도가 밑이 훨씬 빠름
+
+int main(void)
+{
+	int arr[10001],index;
+	for(int i=1;i<10001;i++)
+	{
+		index=d(i);
+		if(index<=10001)
+			arr[index]=1;
+		if(arr[i]!=1)
 			printf("%d\n",i);
 	}
 }
