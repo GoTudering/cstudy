@@ -30,3 +30,4 @@ int main(void)
 	}
 	printf("%d",count);
 }
+// word[i]는 pointer임
