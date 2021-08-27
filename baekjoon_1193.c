@@ -20,3 +20,5 @@ int main(void)
     	printf("%d/%d",c,a+2-c);
   	}
 }
+//math.h를 실행시키고 싶지만 이게 리눅스 기반이기에 안된다. 그러면 -lm옵션을 추가해줘야한다.
+// 명령창에 gcc /workspace/cstudy/baekjoon_1193.c -lm -o ~~ 이런식으로 추가해주면 된다.
