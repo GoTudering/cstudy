@@ -17,13 +17,13 @@ void reverse(char arr[])
 
 int main(void)
 {
-	char A[10002],B[10002],retn[10003];
+	char A[10002]={0},B[10002]={0},retn[10003]={0}; //왜 배열을 0으로 설정해야하지?
 	int next=0,max;
 	scanf("%s %s",A,B);
 	reverse(A);
 	reverse(B);
 	max=(strlen(A)>strlen(B)) ? strlen(A):strlen(B);
-	for(int i=0;i<=max;i++)
+	for(int i=0;i<max;i++)
 	{
 		int sum;
 		sum=A[i]-'0'+B[i]-'0'+next;
@@ -35,6 +35,8 @@ int main(void)
 			next=0;
 		retn[i]=sum%10+'0'	;
 	}
+	if(next==1)
+		retn[max]='1';
 	reverse(retn);
 	printf("%s",retn);
 }
