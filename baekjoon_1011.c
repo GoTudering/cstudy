@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 
 int main(void)
 {
@@ -7,23 +6,36 @@ int main(void)
 	scanf("%d",&T);
 	for(int i=0;i<T;i++)
 	{
-		int x,y,count;
-		double N,n;
-		scanf("%d %d",&x,&y);
-		N=y-x-2;
-		if(N>=0)
+		unsigned int x,y;
+		unsigned int seq[46345]={0};
+		for(int i=0;i<46345;i++)
 		{
-			double D=(-1+sqrt(9+4*N))/2;
-			n=floor(D);
-			if(D-n>=0.5)
-				count=2*(n-1)+3;
-			else if(D=n)
-				count=2*(n-1)+3;
-			else
-				count=2*(n-1)+2;
-			printf("%d\n",count);
+			seq[i]=i*i+3*i+2;
 		}
-		else if(N=-1)
-			printf("%d\n",1);
+		int N,n,count;
+		scanf("%d %d",&x,&y);
+		N=y-x;
+		for(int i=0;i<46345;i++)
+		{
+			if(seq[i]==N)
+			{
+				n=i+1;
+				count=2*n;
+				break;
+			}
+			else if(seq[i]<N&&seq[i+1]>N)
+			{
+				n=i+1;
+				if(N<=seq[i]+n+1)
+					count=2*n+1;
+				else if(N>seq[i]+n+1)
+					count=2*n+2;
+				break;
+			}
+		}
+		if(N==1)
+			count=1;
+		printf("%d\n",count);
+
 	}
 }
